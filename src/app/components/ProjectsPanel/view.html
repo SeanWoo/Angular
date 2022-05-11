@@ -1,0 +1,10 @@
+<paper>
+  <div class="header">
+  <input nz-input [(ngModel)]="findText" placeholder="Введите текст для поиска">
+  <button nz-button (click)="openModal()">Создать проект</button>
+  </div>
+  <div class="container">
+    <project-item *ngFor="let project of projects" [title]="project.title" [description]="project.description" [img]="project.img" [price]="project.price"></project-item>
+  </div>
+  <create-projects-modal [isOpen]="isOpenModal" [callbackSubmit]="addProject"></create-projects-modal>
+</paper>

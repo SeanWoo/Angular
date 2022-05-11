@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #EFF1F4;
+  border: 1px dashed #8a8a8e;
+  padding: 12px;
+  height: 100%;
+}
+
+.image {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

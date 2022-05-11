@@ -1,0 +1,55 @@
+.navbar {
+  background-color: #fff;
+  height: 72px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+  height: 100%;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin-left: 64px;
+  height: 100%;
+}
+
+.list > a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  height: 100%;
+}
+
+.list > a:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0px;
+  height: 4px;
+  background-color: transparent;
+  transition: 200ms;
+  bottom: 0px;
+}
+
+.list > a:hover:before {
+  background-color: #08f;
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}

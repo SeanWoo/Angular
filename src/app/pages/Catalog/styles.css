@@ -1,0 +1,11 @@
+.title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+}

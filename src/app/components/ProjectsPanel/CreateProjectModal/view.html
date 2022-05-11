@@ -1,0 +1,20 @@
+<nz-modal [(nzVisible)]="isOpen" nzTitle="Создайте проект" (nzOnCancel)="handleClose()" (nzOnOk)="handleSubmit()">
+  <ng-container *nzModalContent>
+    <nz-form-item>
+      Введите название проекта:
+      <input nz-input [(ngModel)]="form.title" placeholder="Введите название проекта">
+    </nz-form-item>
+    <nz-form-item>
+      Введите описание проекта:
+      <input nz-input [(ngModel)]="form.description" placeholder="Введите описание проекта">
+    </nz-form-item>
+    <nz-form-item>
+      Введите цену:
+      <input nz-input [(ngModel)]="form.price" type="number" placeholder="Введите цену">
+    </nz-form-item>
+    <nz-form-item>
+      Введите ссылку до картинки:
+      <input nz-input [(ngModel)]="form.img" placeholder="Введите ссылку до картинки">
+    </nz-form-item>
+  </ng-container>
+</nz-modal>
