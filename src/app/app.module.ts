@@ -15,12 +15,14 @@ import ru from '@angular/common/locales/ru';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectPage } from "./pages/ProjectPage";
 
 registerLocaleData(ru);
 
 const appRoutes: Routes =[
   { path: '', component: MainPage},
   { path: 'catalog', component: CatalogPage},
+  { path: 'catalog/:id', component: ProjectPage},
   { path: 'about', component: AboutPage},
 ];
 

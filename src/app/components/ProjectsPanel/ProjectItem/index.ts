@@ -6,6 +6,7 @@ import {Component, Input} from "@angular/core";
   styleUrls: ['styles.css']
 })
 export class ProjectItem {
+  @Input() id?: number;
   @Input() img?: string;
   @Input() title?: string;
   @Input() description?: string;

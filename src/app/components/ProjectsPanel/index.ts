@@ -9,17 +9,19 @@ import {mockData} from "./data";
 })
 export class ProjectsPanel {
   @Output() isOpenModal: boolean = false;
-  private initialProjects: Project[] = []
 
   @Input() findText = '';
 
   get projects(): Project[] {
-    return this.initialProjects
-      .filter((project) => project.title.includes(this.findText))
+    const result = JSON.parse(localStorage.getItem('projects') ?? '[]') as Project[]
+    return result
+      .filter((project) => project.title.toLowerCase().includes(this.findText.toLowerCase()))
   }
 
   constructor() {
-    this.initialProjects = mockData;
+    if (!localStorage.getItem('projects')){
+      localStorage.setItem('projects', JSON.stringify(mockData))
+    }
   }
 
   openModal = (): void => {
@@ -27,10 +29,16 @@ export class ProjectsPanel {
   }
 
   addProject = (model: Project): void => {
-    this.initialProjects = [...this.projects, model]
+    const result = JSON.parse(localStorage.getItem('projects') ?? '[]') as Project[]
+
+    localStorage.setItem('projects', JSON.stringify([...result, model]))
   }
 
   removeProject = (model: Project): void => {
-    this.initialProjects = this.projects.filter((project) => project.id !== model.id);
+    const result = JSON.parse(localStorage.getItem('projects') ?? '[]') as Project[]
+
+    const filtered = result.filter((project) => project.id !== model.id);
+
+    localStorage.setItem('projects', JSON.stringify(filtered))
   }
 }
